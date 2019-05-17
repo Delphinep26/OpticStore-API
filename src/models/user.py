@@ -9,7 +9,6 @@ from sqlalchemy.orm import validates
 import re
 from werkzeug.security import generate_password_hash, check_password_hash
 
-
 class UserModel(db.Model):
     """User model."""
     __tablename__ = 'users'
