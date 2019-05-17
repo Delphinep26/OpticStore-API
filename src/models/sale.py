@@ -15,7 +15,7 @@ import datetime
 
 class SaleModel(db.Model):
     """Sale model."""
-    __tablename__ = 'sales_order'
+    __tablename__ = 'sales'
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(10))
     total_price = db.Column(db.Float(precision=2))
