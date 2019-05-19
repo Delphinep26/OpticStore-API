@@ -1,8 +1,9 @@
-data.db
+*.db
 venv
 *.pc
 *.pyc
 *.pyo
 __pycache__/
 *.stackdump
+
 
