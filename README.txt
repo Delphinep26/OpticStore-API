@@ -1,4 +1,4 @@
-OpticStore API
+ï»¿OpticStore API
 =============
 
 Online OpticStore API system using flask, flask-restful, sqlalchemy,
@@ -21,7 +21,7 @@ How to Run the App?
 -   cd path/to/workspace
 -   git clone <https://github.com/Delphinep26/OpticStore>
 -   cd OpticStore
--   virtualenv -p ‘which python3’ venv
+-   virtualenv -p â€˜which python3â€™ venv
 -   source venv/bin/activate
 -   pip install -r requirements.txt
 -   python3 run.py
