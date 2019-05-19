@@ -1,14 +1,6 @@
-# uncompyle6 version 3.3.2
-# Python bytecode 3.6 (3379)
-# Decompiled from: Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)]
-# Embedded file name: C:\Users\Delphine\PycharmProjects\MyProj\src\resources\customer.py
-# Compiled at: 2019-05-16 19:11:03
-# Size of source mod 2**32: 4503 bytes
 from flask_jwt import jwt_required
 from flask_restful import Resource, reqparse
 from models.customer import CustomerModel
-import logging
-
 
 class Customer(Resource):
     """Customers' endpoint."""
@@ -96,7 +88,7 @@ class Customer(Resource):
             else:
                 return {'message': 'Customer deleted'}
 
-    def put(self, id):
+    def put(self, _id):
         """
         Creates or updates an customer using the provided name, price and customer_id.
 
@@ -111,7 +103,7 @@ class Customer(Resource):
         :rtype: application/json response.
         """
         request_data = Customer.parser.parse_args()
-        customer = CustomerModel.find_by_id(id)
+        customer = CustomerModel.find_by_id(_id)
         if customer is None:
             customer = CustomerModel(**request_data)
         else:

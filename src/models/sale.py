@@ -37,7 +37,7 @@ class SaleModel(db.Model):
                 'customer': self.customer.json()}
 
     @classmethod
-    def find_by_id(cls, id):
+    def find_by_id(cls, _id):
         """
         Selects a sale from the DB and returns it.
 
@@ -46,7 +46,7 @@ class SaleModel(db.Model):
         :return: a sale.
         :rtype: SaleModel.
         """
-        return (cls.query.filter_by(id=id)).first()
+        return (cls.query.filter_by(id=_id)).first()
 
     @validates('date')
     def validate_date(self, key, date):

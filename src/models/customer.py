@@ -1,13 +1,4 @@
-# uncompyle6 version 3.3.2
-# Python bytecode 3.6 (3379)
-# Decompiled from: Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)]
-# Embedded file name: C:\Users\Delphine\PycharmProjects\MyProj\src\models\customer.py
-# Compiled at: 2019-05-16 19:11:03
-# Size of source mod 2**32: 3068 bytes
-"""
-| Created: 2017-08-13
-| Updated: 2017-08-13
-"""
+
 from db import db
 import re
 from sqlalchemy.orm import validates
@@ -38,9 +29,9 @@ class CustomerModel(db.Model):
 
     def json(self):
         """
-        Converts this item to JSON.
+        Converts this customer to JSON.
 
-        :return: this item.
+        :return: this customer.
         :rtype: JSON.
         """
         return {'first_name': self.first_name,
@@ -52,9 +43,9 @@ class CustomerModel(db.Model):
         """
         Selects an customer from the DB and returns it.
 
-        :param name: the name of the item.
+        :param name: the name of the customer.
         :type name: str
-        :return: an item.
+        :return: an customer.
         :rtype: CustomerModel.
         """
         return (cls.query.filter_by(first_name=first_name, last_name=last_name)).first()
@@ -62,11 +53,11 @@ class CustomerModel(db.Model):
     @classmethod
     def find_by_id(cls, _id):
         """
-        Selects an item from the DB and returns it.
+        Selects an customer from the DB and returns it.
 
-        :param name: the name of the item.
+        :param name: the name of the customer.
         :type name: str
-        :return: an item.
+        :return: an customer.
         :rtype: CustomerModel.
         """
         return (cls.query.filter_by(id=_id)).first()
@@ -92,14 +83,14 @@ class CustomerModel(db.Model):
 
     def save_to_db(self):
         """
-        Inserts this item in the DB.
+        Inserts this customer in the DB.
         """
         db.session.add(self)
         db.session.commit()
 
     def delete_from_db(self):
         """
-        Deletes this item from the DB.
+        Deletes this customer from the DB.
         """
         db.session.delete(self)
         db.session.commit()
