@@ -1,4 +1,4 @@
-﻿# OpticStore API ![Optional Text](./img/logo.png)
+﻿# OpticStore API ![alt tag](img\logo.png)
 =============
 
 Online OpticStore API system using flask, flask-restful, sqlalchemy,
