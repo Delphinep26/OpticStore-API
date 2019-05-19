@@ -3,5 +3,5 @@ venv
 *.pyc
 *.pyo
 __pycache__
-.stackdump
+*.stackdump
 
