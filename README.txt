@@ -1,4 +1,4 @@
-﻿OpticStore API
+OpticStore API
 =============
 
 Online OpticStore API system using flask, flask-restful, sqlalchemy,
