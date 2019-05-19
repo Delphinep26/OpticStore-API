@@ -1,13 +1,4 @@
-# uncompyle6 version 3.3.2
-# Python bytecode 3.6 (3379)
-# Decompiled from: Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)]
-# Embedded file name: C:\Users\Delphine\PycharmProjects\MyProj\src\models\sale.py
-# Compiled at: 2019-05-14 22:37:50
-# Size of source mod 2**32: 2274 bytes
-"""
-| Created: 2017-08-13
-| Updated: 2017-08-13
-"""
+
 from db import db
 from sqlalchemy.orm import validates
 import datetime
@@ -33,9 +24,9 @@ class SaleModel(db.Model):
 
     def json(self):
         """
-        Converts this store and all its items to JSON.
+        Converts this sale and all its items to JSON.
 
-        :return: this store and all its items.
+        :return: this sale and all its items.
         :rtype: JSON.
         """
         return {'id': self.id,
@@ -48,12 +39,12 @@ class SaleModel(db.Model):
     @classmethod
     def find_by_id(cls, id):
         """
-        Selects a store from the DB and returns it.
+        Selects a sale from the DB and returns it.
 
-        :param name: the name of the store.
+        :param name: the name of the sale.
         :type name: str
-        :return: a store.
-        :rtype: StoreModel.
+        :return: a sale.
+        :rtype: SaleModel.
         """
         return (cls.query.filter_by(id=id)).first()
 
@@ -71,14 +62,14 @@ class SaleModel(db.Model):
 
     def save_to_db(self):
         """
-        Inserts this store in the DB.
+        Inserts this sale in the DB.
         """
         db.session.add(self)
         db.session.commit()
 
     def delete_from_db(self):
         """
-        Deletes this store from the DB.
+        Deletes this sale from the DB.
         """
         db.session.delete(self)
         db.session.commit()

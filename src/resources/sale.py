@@ -56,7 +56,7 @@ class Sale(Resource):
 
     def post(self):
         """
-        Creates a new item using the provided name, price and store_id.
+        Creates a new item using the provided name, price and sale_id.
 
         :return: success or failure message.
         :rtype: application/json response.
@@ -92,7 +92,7 @@ class Sale(Resource):
 
     def put(self, id):
         """
-        Creates or updates an item using the provided name, price and store_id.
+        Creates or updates an item using the provided name, price and sale_id.
 
         :param id: the id of the sale order.
         :type int
@@ -120,14 +120,14 @@ class Sale(Resource):
 
 
 class SaleList(Resource):
-    """Stores' list endpoint."""
+    """Sales' list endpoint."""
 
     @classmethod
     def get(cls):
         """
         Returns a list of all items.
 
-        :return: all stores' data.
+        :return: all sales' data.
         :rtype: application/json.
         """
         return {'sale': [sale_order.json() for sale_order in SaleModel.query.all()]}

@@ -98,7 +98,7 @@ class Customer(Resource):
 
     def put(self, id):
         """
-        Creates or updates an customer using the provided name, price and store_id.
+        Creates or updates an customer using the provided name, price and customer_id.
 
         :param id: the id of the customer.
         :type int:
