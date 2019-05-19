@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c64fc3b-440d-46be-8220-2643ebb74f7a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/customer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/sale.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/sale.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/customer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/sale.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/sale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sale.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sale.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/sale.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -99,6 +95,15 @@
               <folding>
                 <element signature="e#364#381#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="13" lean-forward="true" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -144,6 +149,7 @@
         <option value="$PROJECT_DIR$/src/models/sale.py" />
         <option value="$PROJECT_DIR$/src/resources/customer.py" />
         <option value="$PROJECT_DIR$/src/resources/sale.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -171,19 +177,7 @@
             <path>
               <item name="OpticStore" type="b2602c69:ProjectViewProjectNode" />
               <item name="OpticStore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpticStore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpticStore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpticStore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpticStore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -633,6 +627,13 @@
           <folding>
             <element signature="e#364#381#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" lean-forward="true" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>

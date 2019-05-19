@@ -1,4 +1,4 @@
-﻿# OpticStore API
+﻿# OpticStore API ![Optional Text](../img/logo.png)
 =============
 
 Online OpticStore API system using flask, flask-restful, sqlalchemy,
@@ -7,7 +7,7 @@ Online OpticStore API system using flask, flask-restful, sqlalchemy,
 The project has been developed using Flask- A python Micro-web framework
 and other additional packages describe below in Tech Stack Section.
 
-Github link for the project - <https://github.com/Delphinep26/OpticStore>
+Github link for the project - <https://github.com/Delphinep26/OpticStore-API>
 
 Installation
 ------------
@@ -19,7 +19,7 @@ How to Run the App?
 -------------------
 
 -   cd path/to/workspace
--   git clone <https://github.com/Delphinep26/OpticStore>
+-   git clone <https://github.com/Delphinep26/OpticStore-API>
 -   cd OpticStore
 -   virtualenv -p ‘which python3’ venv
 -   source venv/bin/activate
@@ -32,14 +32,12 @@ Everything should be ready. In your browser open
 REST Endpoints
 --------------
 
-There are three major objects in the app:-
+There are 4 major objects in the app:-
 
 -   Users
 -   Customers
 -   Sales 
-
-
-
+-   Prescriptions(Soon..)
 
 The endpoints and the corresponding REST operations are defined as
 follows:-
@@ -66,6 +64,18 @@ follows:-
             the sale object too.
         -   **Delete** : This method deletes the given sale if the
             *sale\_id* exists.
+
+-   **Prescription**
+    -   <http://127.0.0.1:5000/prescriptions>
+        -   **GET** : This method on above URL returns all the prescriptions
+            available in the database in json format
+        -   **POST** : This method posts a new menu and accept
+            *application/JSON* format for the operation with details and
+            "prescription\_id" as the required parameter for the JSON.
+        -   **PUT** : Same as POST with additional feature of updating
+            the prescription object too.
+        -   **Delete** : This method deletes the given prescription if the
+            *prescription\_id* exists.
 
 -   **User**
     -   <http://127.0.0.1:5000/register>
