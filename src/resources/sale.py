@@ -3,7 +3,7 @@ from flask_restful import Resource, reqparse
 from models.sale import SaleModel
 
 class Sale(Resource):
-    """Sales Order' endpoint."""
+    """sales' endpoint."""
     parser = reqparse.RequestParser()
     parser.add_argument('date',
                         type=str,
@@ -31,17 +31,17 @@ class Sale(Resource):
         """
         Finds an sale by its name and returns it.
 
-        :param id: the id of the sale order.
+        :param id: the id of the sale.
         :type str
         :return: sale data.
         :rtype: application/json.
         """
-        sale_order = SaleModel.find_by_id(_id)
-        if sale_order:
-            return sale_order.json()
+        sale = SaleModel.find_by_id(_id)
+        if sale:
+            return sale.json()
         else:
             return (
-                {'message': 'sale order not found'}, 404)
+                {'message': 'sale  not found'}, 404)
 
     def post(self):
         """
@@ -51,14 +51,14 @@ class Sale(Resource):
         :rtype: application/json response.
         """
         request_data = Sale.parser.parse_args()
-        sale_order = SaleModel(**request_data)
+        sale = SaleModel(**request_data)
         try:
-            sale_order.save_to_db()
+            sale.save_to_db()
         except:
             return (
-                {'message': 'An error occurred inserting the sale order.'}, 500)
+                {'message': 'An error occurred inserting the sale .'}, 500)
             return (
-                sale_order.json(), 201)
+                sale.json(), 201)
 
     def delete(self, _id):
         """
@@ -75,15 +75,15 @@ class Sale(Resource):
                 sale.delete_from_db()
             except:
                 return (
-                    {'message': 'An error occurred deleting the sale order.'}, 500)
+                    {'message': 'An error occurred deleting the sale .'}, 500)
             else:
-                return {'message': 'Sale order deleted'}
+                return {'message': 'sale  deleted'}
 
     def put(self, _id):
         """
         Creates or updates an sale using the provided name, price and sale_id.
 
-        :param id: the id of the sale order.
+        :param id: the id of the sale .
         :type int
 
         :return: success or failure message.
@@ -92,7 +92,7 @@ class Sale(Resource):
         request_data = Sale.parser.parse_args()
         sale = SaleModel.find_by_id(_id)
         if sale is None:
-            sale_order = Sale(**request_data)
+            sale = sale(**request_data)
         else:
             sale.date = request_data['date']
             sale.total_price = request_data['total_price']
@@ -103,13 +103,13 @@ class Sale(Resource):
                 sale.save_to_db()
             except:
                 return (
-                    {'message': 'An error occurred updating the sale order.'}, 500)
+                    {'message': 'An error occurred updating the sale .'}, 500)
             else:
                 return sale.json()
 
 
 class SaleList(Resource):
-    """Sales' list endpoint."""
+    """sales' list endpoint."""
 
     @classmethod
     def get(cls):
@@ -119,4 +119,4 @@ class SaleList(Resource):
         :return: all sales' data.
         :rtype: application/json.
         """
-        return {'sale': [sale_order.json() for sale_order in SaleModel.query.all()]}
+        return {'sale': [sale.json() for sale in SaleModel.query.all()]}

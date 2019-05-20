@@ -1,0 +1,2 @@
+PRESCRIPTION_TYPE = [('Single_Vision','Single_Vision'),('Multifocal_Lenses','Multifocal Lenses')
+                    ,('Bifocal','Bifocal'),('Progressive','Progressive'),('Computer_Glasses','Reading')]

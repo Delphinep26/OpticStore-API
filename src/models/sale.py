@@ -5,7 +5,7 @@ import datetime
 
 
 class SaleModel(db.Model):
-    """Sale model."""
+    """sale model."""
     __tablename__ = 'sales'
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(10))
@@ -44,7 +44,7 @@ class SaleModel(db.Model):
         :param name: the name of the sale.
         :type name: str
         :return: a sale.
-        :rtype: SaleModel.
+        :rtype: saleModel.
         """
         return (cls.query.filter_by(id=_id)).first()
 

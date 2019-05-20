@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c64fc3b-440d-46be-8220-2643ebb74f7a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/prescription.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/macros.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/prescription.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/prescription.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/prescription.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/sale.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/sale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/sale.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/sale.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,46 +22,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="security.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/security.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#304#346#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="customer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/customer.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -79,14 +46,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prescription.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/customer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="670">
+              <caret line="86" column="81" lean-forward="true" selection-start-line="86" selection-start-column="81" selection-end-line="86" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prescription.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/prescription.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+            <state relative-caret-position="1187">
+              <caret line="80" column="39" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
               <folding>
                 <element signature="e#328#345#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nano.exe.stackdump" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nano.exe.stackdump">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="sale.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/sale.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prescription.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/prescription.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="macros.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/macros.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -99,17 +113,11 @@
       <file leaf-file-name="sale.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/sale.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="50" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+            <state relative-caret-position="527">
+              <caret line="74" column="27" lean-forward="true" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
+              <folding>
+                <element signature="e#1#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,16 +136,23 @@
       <find>sales_o</find>
       <find>sal</find>
       <find>Store</find>
-      <find>sale</find>
       <find>store</find>
       <find>item</find>
       <find>id</find>
       <find>id)</find>
       <find>_id</find>
       <find>ite</find>
+      <find>sale</find>
       <find>Prescription</find>
+      <find>sale.parser</find>
+      <find>Prescription</find>
+      <find>SALE</find>
+      <find>_order</find>
     </findStrings>
     <replaceStrings>
+      <replace>Prescription</replace>
+      <replace>sale</replace>
+      <replace>Sale.parser</replace>
       <replace>prescription</replace>
     </replaceStrings>
   </component>
@@ -157,16 +172,18 @@
         <option value="$PROJECT_DIR$/src/models/__init__.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/models/customer.py" />
-        <option value="$PROJECT_DIR$/src/models/sale.py" />
         <option value="$PROJECT_DIR$/src/resources/customer.py" />
-        <option value="$PROJECT_DIR$/src/resources/sale.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/security.py" />
         <option value="$PROJECT_DIR$/db.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/src/models/type_field.py" />
         <option value="$PROJECT_DIR$/src/models/user.py" />
+        <option value="$PROJECT_DIR$/src/resources/sale.py" />
+        <option value="$PROJECT_DIR$/src/models/sale.py" />
+        <option value="$PROJECT_DIR$/macros.py" />
         <option value="$PROJECT_DIR$/src/models/prescription.py" />
+        <option value="$PROJECT_DIR$/src/resources/prescription.py" />
       </list>
     </option>
   </component>
@@ -281,6 +298,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
@@ -289,14 +307,21 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32843137" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -361,6 +386,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="e#1#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -491,20 +519,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/prescription.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="116" column="45" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
-          <folding>
-            <element signature="e#4#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/sale.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="e#1#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -559,25 +580,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/img/logo.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/customer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#1#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/sale.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="38" column="46" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/user.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -665,19 +667,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nano.exe.stackdump">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/sale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/sale.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="50" />
+        <state relative-caret-position="527">
+          <caret line="74" column="27" lean-forward="true" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
+          <folding>
+            <element signature="e#1#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/macros.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/prescription.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        <state relative-caret-position="1187">
+          <caret line="80" column="39" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
           <folding>
             <element signature="e#328#345#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/customer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="86" column="81" lean-forward="true" selection-start-line="86" selection-start-column="81" selection-end-line="86" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/prescription.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>

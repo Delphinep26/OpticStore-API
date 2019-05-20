@@ -6,7 +6,7 @@ from flask_jwt import JWT
 from security import authenticate, identity
 from resources.user import UserRegister
 from resources.customer import Customer, CustomerList
-from resources.sale import Sale, SaleList
+from resources.sale import sale, saleList
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
@@ -20,8 +20,8 @@ jwt = JWT(app, authenticate, identity)  # /auth
 
 api.add_resource(Customer, '/customer/<int:_id>','/customer/<string:first_name>/<string:last_name>')
 api.add_resource(CustomerList, '/customers')
-api.add_resource(Sale, '/sale/<int:id>')
-api.add_resource(SaleList, '/sales')
+api.add_resource(sale, '/sale/<int:id>')
+api.add_resource(saleList, '/sales')
 api.add_resource(UserRegister, '/register')
 
 if __name__ == '__main__':

@@ -36,8 +36,8 @@ There are 4 major objects in the app:-
 
 -   Users
 -   Customers
--   Sales 
--   Prescriptions(Soon..)
+-   sales
+-   sales(Soon..)
 
 The endpoints and the corresponding REST operations are defined as
 follows:-
@@ -53,7 +53,7 @@ follows:-
             the customer object too.
         -   **Delete** : This method deletes the given customer if the
             *customer\_id* exists.
--   **Sale**
+-   **sale**
     -   <http://127.0.0.1:5000/sales>
         -   **GET** : This method on above URL returns all the sales
             available in the database in json format
@@ -65,17 +65,17 @@ follows:-
         -   **Delete** : This method deletes the given sale if the
             *sale\_id* exists.
 
--   **Prescription**
-    -   <http://127.0.0.1:5000/prescriptions>
-        -   **GET** : This method on above URL returns all the prescriptions
+-   **sale**
+    -   <http://127.0.0.1:5000/sales>
+        -   **GET** : This method on above URL returns all the sales
             available in the database in json format
         -   **POST** : This method posts a new menu and accept
             *application/JSON* format for the operation with details and
-            "prescription\_id" as the required parameter for the JSON.
+            "sale\_id" as the required parameter for the JSON.
         -   **PUT** : Same as POST with additional feature of updating
-            the prescription object too.
-        -   **Delete** : This method deletes the given prescription if the
-            *prescription\_id* exists.
+            the sale object too.
+        -   **Delete** : This method deletes the given sale if the
+            *sale\_id* exists.
 
 -   **User**
     -   <http://127.0.0.1:5000/register>
