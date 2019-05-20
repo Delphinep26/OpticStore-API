@@ -9,22 +9,11 @@ class Prescription(Resource):
                         type=str,
                         required=False,
                         help='Date in the format yyyymmdd')
-    # parser.add_argument('total_price',
-    #                     type=int,
-    #                     required=True,
-    #                     help='Every prescriptions needs a price.')
-    # parser.add_argument('payment_type',
-    #                     type=str,
-    #                     required=True,
-    #                     help='Every Prescriptions needs a payment type.')
-    # parser.add_argument('status',
-    #                     type=str,
-    #                     required=True,
-    #                     help='Every Prescriptions needs a status.')
-    # parser.add_argument('cust_id',
-    #                     type=str,
-    #                     required=True,
-    #                     help='Every Prescriptions needs a cust_id.')
+
+    parser.add_argument('cust_id',
+                        type=str,
+                        required=True,
+                        help='Every Prescriptions needs a cust_id.')
 
     @jwt_required()
     def get(self, _id):
@@ -36,9 +25,9 @@ class Prescription(Resource):
         :return: Prescription data.
         :rtype: application/json.
         """
-        Prescription = PrescriptionModel.find_by_id(_id)
-        if Prescription:
-            return Prescription.json()
+        prescription = PrescriptionModel.find_by_id(_id)
+        if prescription:
+            return prescription.json()
         else:
             return (
                 {'message': 'Prescription order not found'}, 404)
@@ -51,7 +40,7 @@ class Prescription(Resource):
         :rtype: application/json response.
         """
         request_data = Prescription.parser.parse_args()
-        Prescription = PrescriptionModel(**request_data)
+        prescription = PrescriptionModel(**request_data)
         try:
             Prescription.save_to_db()
         except:

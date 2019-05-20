@@ -16,7 +16,7 @@ class CustomerModel(db.Model):
     city = db.Column(db.String(50))
     address = db.Column(db.String(200))
     birth_date = db.Column(db.String(10))
-    sales = db.relationship('saleModel', lazy='dynamic')
+    sales = db.relationship('SaleModel', lazy='dynamic')
 
     def __init__(self, first_name, last_name, phone, email, city, address, birth_date):
         self.first_name = first_name
