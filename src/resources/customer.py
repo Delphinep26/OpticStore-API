@@ -66,10 +66,10 @@ class Customer(Resource):
         except:
             return (
                 {'message': 'An error occurred inserting the customer.'}, 500)
-            return (
-                customer.json(), 201)
+        return (
+            customer.json(), 201)
 
-    def delete(self, id):
+    def delete(self, _id):
         """
         Finds an customer by its name and deletes it.
 
@@ -78,7 +78,7 @@ class Customer(Resource):
         :return: success or failure message.
         :rtype: application/json response.
         """
-        customer = CustomerModel.find_by_id(id)
+        customer = CustomerModel.find_by_id(_id)
         if customer:
             try:
                 customer.delete_from_db()
@@ -119,7 +119,7 @@ class Customer(Resource):
         except:
             return (
                 {'message': 'An error occurred updating the customer.'}, 500)
-            return customer.json()
+        return customer.json()
 
 
 class CustomerList(Resource):

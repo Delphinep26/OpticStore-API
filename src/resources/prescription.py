@@ -13,7 +13,7 @@ class Prescription(Resource):
     parser.add_argument('cust_id',
                         type=str,
                         required=True,
-                        help='Every Prescriptions needs a cust_id.')
+                        help='Every prescriptions needs a cust_id.')
 
     @jwt_required()
     def get(self, _id):
@@ -42,12 +42,12 @@ class Prescription(Resource):
         request_data = Prescription.parser.parse_args()
         prescription = PrescriptionModel(**request_data)
         try:
-            Prescription.save_to_db()
+            prescription.save_to_db()
         except:
             return (
                 {'message': 'An error occurred inserting the Prescription order.'}, 500)
-            return (
-                Prescription.json(), 201)
+        return (
+            prescription.json(), 201)
 
     def delete(self, _id):
         """
@@ -58,10 +58,10 @@ class Prescription(Resource):
         :return: success or failure message.
         :rtype: application/json response.
         """
-        Prescription = PrescriptionModel.find_by_id(_id)
-        if Prescription:
+        prescription = PrescriptionModel.find_by_id(_id)
+        if prescription:
             try:
-                Prescription.delete_from_db()
+                prescription.delete_from_db()
             except:
                 return (
                     {'message': 'An error occurred deleting the Prescription order.'}, 500)
@@ -79,22 +79,19 @@ class Prescription(Resource):
         :rtype: application/json response.
         """
         request_data = Prescription.parser.parse_args()
-        Prescription = PrescriptionModel.find_by_id(_id)
-        if Prescription is None:
-            Prescription = Prescription(**request_data)
+        prescription = PrescriptionModel(**request_data)
+        if prescription is None:
+            prescription = PrescriptionModel(**request_data)
         else:
-            Prescription.date = request_data['date']
-            Prescription.total_price = request_data['total_price']
-            Prescription.payment_type = request_data['payment_type']
-            Prescription.status = request_data['status']
-            Prescription.cust_id = request_data['cust_id']
+            prescription.date = request_data['date']
+
             try:
-                Prescription.save_to_db()
+                prescription.save_to_db()
             except:
                 return (
                     {'message': 'An error occurred updating the Prescription order.'}, 500)
             else:
-                return Prescription.json()
+                return prescription.json()
 
 
 class PrescriptionList(Resource):

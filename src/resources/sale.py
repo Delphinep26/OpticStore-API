@@ -57,8 +57,8 @@ class Sale(Resource):
         except:
             return (
                 {'message': 'An error occurred inserting the sale .'}, 500)
-            return (
-                sale.json(), 201)
+        return (
+            sale.json(), 201)
 
     def delete(self, _id):
         """

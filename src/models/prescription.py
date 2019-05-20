@@ -16,36 +16,36 @@ class PrescriptionModel(db.Model):
     __tablename__ = 'prescriptions'
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(20))
-    Sphere_OD = db.Column(db.Float(precision=2))
-    Sphere_OS = db.Column(db.Float(precision=2))
-    Cylinder_OD = db.Column(db.Float(precision=2))
-    Cylinder_OS = db.Column(db.Float(precision=2))
-    Axis_OD = db.Column(db.Float(precision=2))
-    Axis_OS = db.Column(db.Float(precision=2))
-    Add_OD = db.Column(db.Float(precision=2))
-    Add_OS = db.Column(db.Float(precision=2))
-    Pd = db.Column(db.Float(precision=2))
-    Type_ID = ChoiceType(macros.PRESCRIPTION_TYPE)
-    Nearsightedness = db.Column(db.Float(precision=2))
-    Farsightedness = db.Column(db.Float(precision=2))
-    Document_ID = db.Column(db.String(20))
+    sphere_OD = db.Column(db.Float(precision=2))
+    sphere_OS = db.Column(db.Float(precision=2))
+    cylinder_OD = db.Column(db.Float(precision=2))
+    cylinder_OS = db.Column(db.Float(precision=2))
+    axis_OD = db.Column(db.Float(precision=2))
+    axis_OS = db.Column(db.Float(precision=2))
+    add_OD = db.Column(db.Float(precision=2))
+    add_OS = db.Column(db.Float(precision=2))
+    pd = db.Column(db.Float(precision=2))
+    type_ID = ChoiceType(macros.PRESCRIPTION_TYPE)
+    nearsightedness = db.Column(db.Float(precision=2))
+    farsightedness = db.Column(db.Float(precision=2))
+    document_ID = db.Column(db.String(20))
     cust_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
     customer = db.relationship('CustomerModel')
 
 
-    def __init__(self, date, Sphere_OD,Sphere_OS,Cylinder_OD,Cylinder_OS,Axis_OD,Axis_OS,Pd,Type_ID,
-                 Nearsightedness,Farsightedness,Document_ID,cust_id):
+    def __init__(self, date, sphere_OD,sphere_OS,cylinder_OD,cylinder_OS,axis_OD,axis_OS,pd,type_ID,
+                 nearsightedness,farsightedness,document_ID,cust_id):
         self.date = date
-        self.Sphere_OD = Sphere_OD
-        self.Sphere_OS = Sphere_OS
-        self.Cylinder_OD = Cylinder_OD
-        self.Cylinder_OS = Cylinder_OS
-        self.Axis_OD = Axis_OD
-        self.Axis_OS = Axis_OS
-        self.Pd = Pd
-        self.Type_ID = Type_ID
-        self.Nearsightedness = Nearsightedness
-        self.Farsightedness = Farsightedness
+        self.sphere_OD = sphere_OD
+        self.sphere_OS = sphere_OS
+        self.cylinder_OD = cylinder_OD
+        self.cylinder_OS = cylinder_OS
+        self.axis_OD = axis_OD
+        self.axis_OS = axis_OS
+        self.pd = pd
+        self.type_ID = type_ID
+        self.nearsightedness = nearsightedness
+        self.farsightedness = farsightedness
         self.cust_id = cust_id
 
 
