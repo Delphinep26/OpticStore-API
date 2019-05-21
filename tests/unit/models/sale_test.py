@@ -1,25 +1,31 @@
-from models.sale import SaleModel
+from src.models.sale import SaleModel
 from tests.base_test import BaseTest
 
 
 class SaleTest(BaseTest):
-    def test_create_sale(self):
-        sale = SaleModel('test', 19.99, 1)
 
-        self.assertEqual(sale.name, 'test',
-                         "The name of the sale after creation does not equal the constructor argument.")
-        self.assertEqual(sale.price, 19.99,
-                         "The price of the sale after creation does not equal the constructor argument.")
-        self.assertEqual(sale.store_id, 1,
-                         "The store_id of the sale after creation does not equal the constructor argument.")
-        self.assertIsNone(sale.store, "The sale's store was not None even though the store was not created.")
+    def test_create_sale(self):
+
+        sale = SaleModel('01-01-2019', 100, 'test_payment_type','test_status','1')
+
+        self.assertEqual(sale.date, '01-01-2019',
+                         "The date of the sale after creation does not equal the constructor argument.")
+        self.assertEqual(sale.total_price, 100,
+                         "The total price of the sale after creation does not equal the constructor argument.")
+        self.assertEqual(sale.payment_type, 'test_payment_type',
+                         "The payment_type of the sale after creation does not equal the constructor argument.")
+        self.assertEqual(sale.status,'test_status',  "The status of the sale after creation does not equal the constructor argument.")
+        self.assertEqual(sale.cust_id,'1',"The cust_id of the sale after creation does not equal the constructor argument.")
 
     def test_sale_json(self):
-        sale = SaleModel('test', 19.99, 1)
-        expected = {
-            'name': 'test',
-            'price': 19.99
-        }
+        sale = SaleModel('01-01-2019', 100, 'test_payment_type', 'test_status', '1')
+
+        expected = {'date': '01-01-2019',
+                    'total price': 100,
+                    'payment_type': 'test_payment_type',
+                    'status': 'test_status',
+                    'cust_id': '1',
+                    }
 
         self.assertEqual(
             sale.json(),

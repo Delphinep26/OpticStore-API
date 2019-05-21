@@ -1,5 +1,5 @@
-from models.customer import CustomerModel
-from models.sale import SaleModel
+from src.models.customer import CustomerModel
+from src.models.sale import SaleModel
 from tests.base_test import BaseTest
 
 

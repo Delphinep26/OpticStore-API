@@ -35,8 +35,8 @@ class CustomerModel(db.Model):
         :rtype: JSON.
         """
         return {'first_name': self.first_name,
-                'last_name': self.last_name, 'phone': self.phone, 'birth_date': self.birth_date, 'city': self.city,
-                'address': self.address, 'email': self.email}
+                'last_name': self.last_name, 'phone': self.phone, 'email': self.email, 'city': self.city,
+                'address': self.address, 'birth_date': self.birth_date}
 
     @classmethod
     def find_by_name(cls, first_name, last_name):

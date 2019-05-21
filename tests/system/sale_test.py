@@ -1,4 +1,4 @@
-from models.user import UserModel
+from src.models.user import UserModel
 from models.item import ItemModel
 from models.store import StoreModel
 from tests.base_test import BaseTest

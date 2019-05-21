@@ -5,7 +5,7 @@ This class should be the parent class to each unit test.
 It allows for instantiation of the database dynamically,
 and makes sure that it is a new, blank database each time.
 """
-
+import os
 from unittest import TestCase
 from app import app
 from db import db

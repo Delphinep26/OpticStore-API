@@ -29,12 +29,11 @@ class SaleModel(db.Model):
         :return: this sale and all its items.
         :rtype: JSON.
         """
-        return {'id': self.id,
+        return {'date': self.date,
                 'total price': self.total_price,
                 'payment_type': self.payment_type,
                 'status': self.status,
-                'cust_id': self.cust_id,
-                'customer': self.customer.json()}
+                'cust_id': self.cust_id}
 
     @classmethod
     def find_by_id(cls, _id):
