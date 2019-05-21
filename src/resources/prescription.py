@@ -1,6 +1,6 @@
 from flask_jwt import jwt_required
 from flask_restful import Resource, reqparse
-from models.prescription import PrescriptionModel
+from src.models.prescription import PrescriptionModel
 
 class Prescription(Resource):
     """Prescriptions Order' endpoint."""

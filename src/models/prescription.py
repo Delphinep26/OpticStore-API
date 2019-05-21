@@ -5,11 +5,8 @@
 # Compiled at: 2019-05-14 23:54:35
 # Size of source mod 2**32: 2299 bytes
 from db import db
-from sqlalchemy.orm import validates
-import re
-from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy_utils import ChoiceType
-import macros
+from src.models import constants
 
 class PrescriptionModel(db.Model):
     """prescriptionmodel."""
@@ -25,7 +22,7 @@ class PrescriptionModel(db.Model):
     add_OD = db.Column(db.Float(precision=2))
     add_OS = db.Column(db.Float(precision=2))
     pd = db.Column(db.Float(precision=2))
-    type_ID = ChoiceType(macros.PRESCRIPTION_TYPE)
+    type_ID = ChoiceType(constants.PRESCRIPTION_TYPE)
     nearsightedness = db.Column(db.Float(precision=2))
     farsightedness = db.Column(db.Float(precision=2))
     document_ID = db.Column(db.String(20))
@@ -75,7 +72,3 @@ class PrescriptionModel(db.Model):
         """
         db.session.delete(self)
         db.session.commit()
-
-    # class PrescriptionModelForm(ModelForm):
-    #     class Meta:
-    #         model = PrescriptionModel

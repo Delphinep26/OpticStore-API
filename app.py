@@ -4,10 +4,10 @@ from flask_restful import Api
 from flask_jwt import JWT
 
 from security import authenticate, identity
-from resources.user import UserRegister
-from resources.customer import Customer, CustomerList
-from resources.sale import Sale, SaleList
-from resources.prescription import Prescription, PrescriptionList
+from src.resources.user import UserRegister
+from src.resources.customer import Customer, CustomerList
+from src.resources.sale import Sale, SaleList
+from src.resources.prescription import Prescription, PrescriptionList
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
