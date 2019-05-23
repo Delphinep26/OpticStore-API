@@ -1,62 +1,75 @@
 from src.models.user import UserModel
-from models.item import ItemModel
-from models.store import StoreModel
+from src.models.sale import SaleModel
+from src.models.customer import CustomerModel
 from tests.base_test import BaseTest
+
 import json
 
 
-class ItemTest(BaseTest):
+class SaleTest(BaseTest):
     def setUp(self):
-        super(ItemTest, self).setUp()
+        super(SaleTest, self).setUp()
         with self.app() as c:
             with self.app_context():
-                UserModel('test', '1234').save_to_db()
+                sale = SaleModel('01-01-2019', 100, 'test_payment_type', 'test_status', '1')
+                sale.save_to_db()
                 auth_request = c.post('/auth', data=json.dumps({
-                    'username': 'test',
-                    'password': '1234'
+                    'username': 'test_username',
+                    'password': 'A12345678'
                 }), headers={'Content-Type': 'application/json'})
                 self.auth_header = "JWT {}".format(json.loads(auth_request.data)['access_token'])
 
-    def test_item_no_auth(self):
+    def test_sale_no_auth(self):
         with self.app() as c:
-            r = c.get('/item/test')
+            r = c.get('/sale/1')
             self.assertEqual(r.status_code, 401)
 
-    def test_item_not_found(self):
+    def test_sale_not_found(self):
         with self.app() as c:
-            r = c.get('/item/test', headers={'Authorization': self.auth_header})
+            r = c.get('/sale/1', headers={'Authorization': self.auth_header})
             self.assertEqual(r.status_code, 404)
 
-    def test_item_found(self):
+    def test_sale_found(self):
         with self.app() as c:
             with self.app_context():
-                StoreModel('test').save_to_db()
-                ItemModel('test', 17.99, 1).save_to_db()
-                r = c.get('/item/test', headers={'Authorization': self.auth_header})
-
+                sale = SaleModel('01-01-2019', 100, 'test_payment_type', 'test_status', '1')
+                sale.save_to_db()
+                r = c.get('/sale/1', headers={'Authorization': self.auth_header})
+                expected = {'date': '01-01-2019',
+                            'total price': 100,
+                            'payment_type': 'test_payment_type',
+                            'status': 'test_status',
+                            'cust_id': '1',
+                            }
                 self.assertEqual(r.status_code, 200)
-                self.assertDictEqual(d1={'name': 'test', 'price': 17.99},
+                self.assertDictEqual(d1=expected,
                                      d2=json.loads(r.data))
 
-    def test_delete_item(self):
+    def test_delete_sale(self):
         with self.app() as c:
             with self.app_context():
-                StoreModel('test').save_to_db()
-                ItemModel('test', 17.99, 1).save_to_db()
-                r = c.delete('/item/test')
+                sale = SaleModel('01-01-2019', 100, 'test_payment_type', 'test_status', '1')
+                sale.save_to_db()
+                r = c.delete('/sale/1')
 
                 self.assertEqual(r.status_code, 200)
-                self.assertDictEqual(d1={'message': 'Item deleted'},
+                self.assertDictEqual(d1={'message': 'Sale deleted'},
                                      d2=json.loads(r.data))
 
     def test_create_item(self):
         with self.app() as c:
             with self.app_context():
-                StoreModel('test').save_to_db()
-                r = c.post('/item/test', data={'price': 17.99, 'store_id': 1})
+
+                sale_data = {'date': '01-01-2019',
+                            'total price': 100,
+                            'payment_type': 'test_payment_type',
+                            'status': 'test_status',
+                            'cust_id': '1',
+                            }
+                r = c.post('/item/test', data=sale_data)
 
                 self.assertEqual(r.status_code, 201)
-                self.assertEqual(ItemModel.find_by_name('test').price, 17.99)
+                self.assertEqual(SaleModel.find_by_date('01-01-2019','1').total_price, 100)
                 self.assertDictEqual(d1={'name': 'test', 'price': 17.99},
                                      d2=json.loads(r.data))
 

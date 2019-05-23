@@ -43,7 +43,7 @@ The endpoints and the corresponding REST operations are defined as
 follows:-
 
 -   **Customer**
-    -   <http://127.0.0.1:5000/customers>
+    -   <http://127.0.0.1:5000/customer>
         -   **GET** : This method on above URL returns all the
             customers available in the database in json format
         -   **POST** : This method posts a new customer and accept
@@ -54,7 +54,7 @@ follows:-
         -   **Delete** : This method deletes the given customer if the
             *customer\_id* exists.
 -   **sale**
-    -   <http://127.0.0.1:5000/sales>
+    -   <http://127.0.0.1:5000/sale>
         -   **GET** : This method on above URL returns all the sales
             available in the database in json format
         -   **POST** : This method posts a new menu and accept
@@ -65,13 +65,13 @@ follows:-
         -   **Delete** : This method deletes the given sale if the
             *sale\_id* exists.
 
--   **sale**
-    -   <http://127.0.0.1:5000/sales>
+-   **prescription**
+    -   <http://127.0.0.1:5000/prescription>
         -   **GET** : This method on above URL returns all the sales
             available in the database in json format
-        -   **POST** : This method posts a new menu and accept
+        -   **POST** : This method posts a new prescription and accept
             *application/JSON* format for the operation with details and
-            "sale\_id" as the required parameter for the JSON.
+            "prescription\_id" as the required parameter for the JSON.
         -   **PUT** : Same as POST with additional feature of updating
             the sale object too.
         -   **Delete** : This method deletes the given sale if the
@@ -86,7 +86,22 @@ follows:-
 
 Unit Testing Endpoints
 ----------------------
-Soon ...
+
+The Tests for all the modules are located in tests directory and can be fired in two ways:-
+
+Individually by running their individual test modules
+All at once by running TestAll module which look for all the available modules in the directory and fires the test cases one by one.
+The Flask's Unittest modules were used for developing the testcases.
+
+Additional endpoints
+----------------------
+
+http://127.0.0.1:5000/customer/<int:_id>
+Returns the particular customer with id = id if it exists
+http://127.0.0.1:5000/customer/
+Post
+
+Returns the particular restaurant with id = id if it exists
 
 
 
