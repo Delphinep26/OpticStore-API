@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c64fc3b-440d-46be-8220-2643ebb74f7a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration/models/customer_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/models/customer_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration/models/sale_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/models/sale_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration/models/user_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/models/user_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/system/customer_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/system/customer_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/system/sale_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/system/sale_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sale_test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sale_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/system/sale_test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -118,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="72" column="71" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+            <state relative-caret-position="438">
+              <caret line="104" column="22" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -202,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/resources/customer.py" />
         <option value="$PROJECT_DIR$/src/models/customer.py" />
         <option value="$PROJECT_DIR$/src/models/sale.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/tests/unit/models/customer_test.py" />
         <option value="$PROJECT_DIR$/tests/unit/models/sale_test.py" />
         <option value="$PROJECT_DIR$/tests/unit/models/user_test.py" />
@@ -212,6 +205,7 @@
         <option value="$PROJECT_DIR$/tests/system/user_test.py" />
         <option value="$PROJECT_DIR$/tests/system/customer_test.py" />
         <option value="$PROJECT_DIR$/tests/system/sale_test.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -413,6 +407,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -728,13 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="72" column="71" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/unit/models/customer_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -813,6 +801,13 @@
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="104" column="22" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
         </state>
       </provider>
     </entry>

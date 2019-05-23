@@ -43,9 +43,13 @@ The endpoints and the corresponding REST operations are defined as
 follows:-
 
 -   **Customer**
-    -   <http://127.0.0.1:5000/customer>
+    -   <http://127.0.0.1:5000/customers>
         -   **GET** : This method on above URL returns all the
             customers available in the database in json format
+    -   <http://127.0.0.1:5000/customer>
+         -   **GET** : This method on above URL returns in json format
+         the particular customer available in the database
+         with id = id if it exists
         -   **POST** : This method posts a new customer and accept
             *application/JSON* format for the operation with "name" as
             the only and the required parameter for the JSON.
@@ -53,10 +57,14 @@ follows:-
             the customer object too.
         -   **Delete** : This method deletes the given customer if the
             *customer\_id* exists.
--   **sale**
+-   **Sale**
+     -   <http://127.0.0.1:5000/sales>
+        -   **GET** : This method on above URL returns all the
+            sales available in the database in json format
     -   <http://127.0.0.1:5000/sale>
-        -   **GET** : This method on above URL returns all the sales
-            available in the database in json format
+        -   **GET** : This method on above URL returns in json format
+         the particular sale available in the database
+         with id = id if it exists
         -   **POST** : This method posts a new menu and accept
             *application/JSON* format for the operation with details and
             "sale\_id" as the required parameter for the JSON.
@@ -65,7 +73,7 @@ follows:-
         -   **Delete** : This method deletes the given sale if the
             *sale\_id* exists.
 
--   **prescription**
+-   **Prescription**
     -   <http://127.0.0.1:5000/prescription>
         -   **GET** : This method on above URL returns all the sales
             available in the database in json format
@@ -95,13 +103,3 @@ The Flask's Unittest modules were used for developing the testcases.
 
 Additional endpoints
 ----------------------
-
-http://127.0.0.1:5000/customer/<int:_id>
-Returns the particular customer with id = id if it exists
-http://127.0.0.1:5000/customer/
-Post
-
-Returns the particular restaurant with id = id if it exists
-
-
-
