@@ -47,7 +47,7 @@ follows:
     -   http://127.0.0.1:5000/customers
         -   **GET** : This method on above URL returns all the
             customers available in the database in json format
-    -   http://127.0.0.1:5000/customer/*<int:_id>*
+    -   http://127.0.0.1:5000/customer/'<int:_id>'
          -   **GET** : This method on above URL returns in json format
          the particular customer available in the database if
          the *customer\_id* exists.
