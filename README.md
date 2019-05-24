@@ -47,7 +47,7 @@ follows:
     -   http://127.0.0.1:5000/customers
         -   **GET** : This method on above URL returns all the
             customers available in the database in json format
-    -   http://127.0.0.1:5000/customer/'<int:_id>'
+    -   http://127.0.0.1:5000/customer/{int:_id}
          -   **GET** : This method on above URL returns in json format
          the particular customer available in the database if
          the *customer\_id* exists.
@@ -64,7 +64,7 @@ follows:
     -   http://127.0.0.1:5000/sales
         -   **GET** : This method on above URL returns all the
             sales available in the database in json format
-    -   http://127.0.0.1:5000/sale/<int:_id>
+    -   http://127.0.0.1:5000/sale/{int:_id}
          -   **GET** : This method on above URL returns in json format
          the particular customer available in the database if
          the *sale\_id* exists.
@@ -81,7 +81,7 @@ follows:
     -   http://127.0.0.1:5000/prescriptions
         -   **GET** : This method on above URL returns all the
             prescriptions available in the database in json format
-    -   http://127.0.0.1:5000/prescription/<int:_id>
+    -   http://127.0.0.1:5000/prescription/{int:_id}
          -   **GET** : This method on above URL returns in json format
          the particular prescription available in the database if
          the *prescription\_id* exists.
