@@ -1,4 +1,5 @@
-﻿# OpticStore API     ![GitHub Logo](/img/logo.png)
+﻿![GitHub Logo](/img/logo.png)
+# OpticStore API
 =============
 
 Online OpticStore API system using flask, flask-restful, sqlalchemy,
@@ -50,7 +51,7 @@ follows:
          -   **GET** : This method on above URL returns in json format
          the particular customer available in the database if
          the *customer\_id* exists.
-    -   **Delete** : This method deletes the given customer if the
+        -   **Delete** : This method deletes the given customer if the
          *customer\_id* exists.
     -   <http://127.0.0.1:5000/customer
         -   **POST** : This method posts a new customer and accept
@@ -67,7 +68,7 @@ follows:
          -   **GET** : This method on above URL returns in json format
          the particular customer available in the database if
          the *sale\_id* exists.
-    -   **Delete** : This method deletes the given sale if the
+        -   **Delete** : This method deletes the given sale if the
          *sale\_id* exists.
     -   <http://127.0.0.1:5000/sale
         -   **POST** : This method posts a new sale and accept
@@ -84,7 +85,7 @@ follows:
          -   **GET** : This method on above URL returns in json format
          the particular prescription available in the database if
          the *prescription\_id* exists.
-    -   **Delete** : This method deletes the given prescription if the
+        -   **Delete** : This method deletes the given prescription if the
          *prescription\_id* exists.
     -   <http://127.0.0.1:5000/prescription
         -   **POST** : This method posts a new prescription and accept
@@ -108,6 +109,3 @@ The Tests for all the modules are located in tests directory and can be fired in
 Individually by running their individual test modules
 All at once by running TestAll module which look for all the available modules in the directory and fires the test cases one by one.
 The Flask's Unittest modules were used for developing the testcases.
-
-Additional endpoints
-----------------------
