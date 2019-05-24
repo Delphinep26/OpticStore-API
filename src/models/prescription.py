@@ -22,7 +22,7 @@ class PrescriptionModel(db.Model):
     add_OD = db.Column(db.Float(precision=2))
     add_OS = db.Column(db.Float(precision=2))
     pd = db.Column(db.Float(precision=2))
-    type_ID = ChoiceType(constants.PRESCRIPTION_TYPE)
+    type_name = ChoiceType(constants.PRESCRIPTION_TYPE)
     nearsightedness = db.Column(db.Float(precision=2))
     farsightedness = db.Column(db.Float(precision=2))
     document_id = db.Column(db.String(20))
@@ -30,7 +30,7 @@ class PrescriptionModel(db.Model):
     customer = db.relationship('CustomerModel')
 
 
-    def __init__(self, date, sphere_OD,sphere_OS,cylinder_OD,cylinder_OS,axis_OD,axis_OS,pd,type_ID,
+    def __init__(self, date, sphere_OD,sphere_OS,cylinder_OD,cylinder_OS,axis_OD,axis_OS,pd,type_name,
                  nearsightedness,farsightedness,document_id,cust_id):
         self.date = date
         self.sphere_OD = sphere_OD
@@ -40,7 +40,7 @@ class PrescriptionModel(db.Model):
         self.axis_OD = axis_OD
         self.axis_OS = axis_OS
         self.pd = pd
-        self.type_ID = type_ID
+        self.type_name = type_name
         self.nearsightedness = nearsightedness
         self.farsightedness = farsightedness
         self.document_id = document_id
@@ -57,7 +57,7 @@ class PrescriptionModel(db.Model):
                 'sphere_OD': self.sphere_OD,'sphere_OS': self.sphere_OS,
                 'cylinder_OD': self.cylinder_OD,'cylinder_OS': self.cylinder_OS,
                 'axis_OD': self.axis_OD,'axis_OS': self.axis_OS,
-                'pd': self.pd,'type_ID': self.type_ID,
+                'pd': self.pd,'type_name': self.type_name,
                 'nearsightedness': self.nearsightedness,'farsightedness': self.farsightedness,
                 'document_id': self.document_id, 'cust_id': self.cust_id}
 

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1c64fc3b-440d-46be-8220-2643ebb74f7a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/models/prescription.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/prescription.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/system/sale_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/system/sale_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sale_test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sale_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/system/sale_test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -52,14 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/system/user_test.py">
+      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -73,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prescription.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="prescription.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/prescription.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+            <state relative-caret-position="310">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -139,6 +135,7 @@
       <find>item</find>
       <find>store</find>
       <find>test_sale</find>
+      <find>type_ID</find>
     </findStrings>
     <replaceStrings>
       <replace>Prescription</replace>
@@ -146,6 +143,7 @@
       <replace>prescription</replace>
       <replace>customer</replace>
       <replace>sale</replace>
+      <replace>type_name</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -195,8 +193,8 @@
         <option value="$PROJECT_DIR$/tests/system/user_test.py" />
         <option value="$PROJECT_DIR$/tests/system/customer_test.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/models/prescription.py" />
         <option value="$PROJECT_DIR$/tests/system/sale_test.py" />
+        <option value="$PROJECT_DIR$/src/models/prescription.py" />
       </list>
     </option>
   </component>
@@ -414,6 +412,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32843137" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="8" />
@@ -427,7 +426,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -617,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="104" selection-start-line="1" selection-start-column="104" selection-end-line="1" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -773,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/prescription.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/system/customer_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -794,6 +778,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/prescription.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
         </state>
       </provider>
     </entry>
