@@ -53,7 +53,7 @@ follows:
          the *customer\_id* exists.
         -   **Delete** : This method deletes the given customer if the
          *customer\_id* exists.
-    -   <http://127.0.0.1:5000/customer
+    -   <http://127.0.0.1:5000/customer>
         -   **POST** : This method posts a new customer and accept
             *application/JSON* format for the operation with first_name
              and last_name as the only and the required parameter for the JSON.
@@ -70,7 +70,7 @@ follows:
          the *sale\_id* exists.
         -   **Delete** : This method deletes the given sale if the
          *sale\_id* exists.
-    -   <http://127.0.0.1:5000/sale
+    -   <http://127.0.0.1:5000/sale>
         -   **POST** : This method posts a new sale and accept
             *application/JSON* format for the operation with
             the required parameter for the JSON.
@@ -87,7 +87,7 @@ follows:
          the *prescription\_id* exists.
         -   **Delete** : This method deletes the given prescription if the
          *prescription\_id* exists.
-    -   <http://127.0.0.1:5000/prescription
+    -   <http://127.0.0.1:5000/prescription>
         -   **POST** : This method posts a new prescription and accept
             *application/JSON* format for the operation with
             the required parameter for the JSON.
