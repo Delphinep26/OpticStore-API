@@ -36,54 +36,62 @@ There are 4 major objects in the app:-
 
 -   Users
 -   Customers
--   sales
--   sales(Soon..)
+-   Sales
+-   Prescriptions
 
 The endpoints and the corresponding REST operations are defined as
-follows:-
+follows:
 
 -   **Customer**
     -   <http://127.0.0.1:5000/customers>
         -   **GET** : This method on above URL returns all the
             customers available in the database in json format
-    -   <http://127.0.0.1:5000/customer>
+    -   <http://127.0.0.1:5000/customer/<int:_id>
          -   **GET** : This method on above URL returns in json format
-         the particular customer available in the database
-         with id = id if it exists
+         the particular customer available in the database if
+         the *customer\_id* exists.
+    -   **Delete** : This method deletes the given customer if the
+         *customer\_id* exists.
+    -   <http://127.0.0.1:5000/customer
         -   **POST** : This method posts a new customer and accept
-            *application/JSON* format for the operation with "name" as
-            the only and the required parameter for the JSON.
+            *application/JSON* format for the operation with first_name
+             and last_name as the only and the required parameter for the JSON.
         -   **PUT** : Same as POST with additional feature of updating
             the customer object too.
-        -   **Delete** : This method deletes the given customer if the
-            *customer\_id* exists.
--   **Sale**
-     -   <http://127.0.0.1:5000/sales>
+
+-   **Sales**
+    -   <http://127.0.0.1:5000/sales>
         -   **GET** : This method on above URL returns all the
             sales available in the database in json format
-    -   <http://127.0.0.1:5000/sale>
-        -   **GET** : This method on above URL returns in json format
-         the particular sale available in the database
-         with id = id if it exists
-        -   **POST** : This method posts a new menu and accept
-            *application/JSON* format for the operation with details and
-            "sale\_id" as the required parameter for the JSON.
+    -   <http://127.0.0.1:5000/sale/<int:_id>
+         -   **GET** : This method on above URL returns in json format
+         the particular customer available in the database if
+         the *sale\_id* exists.
+    -   **Delete** : This method deletes the given sale if the
+         *sale\_id* exists.
+    -   <http://127.0.0.1:5000/sale
+        -   **POST** : This method posts a new sale and accept
+            *application/JSON* format for the operation with
+            the required parameter for the JSON.
         -   **PUT** : Same as POST with additional feature of updating
             the sale object too.
-        -   **Delete** : This method deletes the given sale if the
-            *sale\_id* exists.
 
 -   **Prescription**
-    -   <http://127.0.0.1:5000/prescription>
-        -   **GET** : This method on above URL returns all the sales
-            available in the database in json format
+    -   <http://127.0.0.1:5000/prescriptions>
+        -   **GET** : This method on above URL returns all the
+            prescriptions available in the database in json format
+    -   <http://127.0.0.1:5000/prescription/<int:_id>
+         -   **GET** : This method on above URL returns in json format
+         the particular prescription available in the database if
+         the *prescription\_id* exists.
+    -   **Delete** : This method deletes the given prescription if the
+         *prescription\_id* exists.
+    -   <http://127.0.0.1:5000/prescription
         -   **POST** : This method posts a new prescription and accept
-            *application/JSON* format for the operation with details and
-            "prescription\_id" as the required parameter for the JSON.
+            *application/JSON* format for the operation with
+            the required parameter for the JSON.
         -   **PUT** : Same as POST with additional feature of updating
-            the sale object too.
-        -   **Delete** : This method deletes the given sale if the
-            *sale\_id* exists.
+            the prescription object too.
 
 -   **User**
     -   <http://127.0.0.1:5000/register>
