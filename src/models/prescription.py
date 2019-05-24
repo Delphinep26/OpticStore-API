@@ -25,13 +25,13 @@ class PrescriptionModel(db.Model):
     type_ID = ChoiceType(constants.PRESCRIPTION_TYPE)
     nearsightedness = db.Column(db.Float(precision=2))
     farsightedness = db.Column(db.Float(precision=2))
-    document_ID = db.Column(db.String(20))
+    document_id = db.Column(db.String(20))
     cust_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
     customer = db.relationship('CustomerModel')
 
 
     def __init__(self, date, sphere_OD,sphere_OS,cylinder_OD,cylinder_OS,axis_OD,axis_OS,pd,type_ID,
-                 nearsightedness,farsightedness,document_ID,cust_id):
+                 nearsightedness,farsightedness,document_id,cust_id):
         self.date = date
         self.sphere_OD = sphere_OD
         self.sphere_OS = sphere_OS
@@ -43,7 +43,23 @@ class PrescriptionModel(db.Model):
         self.type_ID = type_ID
         self.nearsightedness = nearsightedness
         self.farsightedness = farsightedness
+        self.document_id = document_id
         self.cust_id = cust_id
+
+    def json(self):
+        """
+        Converts this customer to JSON.
+
+        :return: this customer.
+        :rtype: JSON.
+        """
+        return {'date': self.date,'date': self.date,
+                'sphere_OD': self.sphere_OD,'sphere_OS': self.sphere_OS,
+                'cylinder_OD': self.cylinder_OD,'cylinder_OS': self.cylinder_OS,
+                'axis_OD': self.axis_OD,'axis_OS': self.axis_OS,
+                'pd': self.pd,'type_ID': self.type_ID,
+                'nearsightedness': self.nearsightedness,'farsightedness': self.farsightedness,
+                'document_id': self.document_id, 'cust_id': self.cust_id}
 
 
     @classmethod

@@ -1,8 +1,6 @@
-from src.models.user import UserModel
-from src.models.sale import SaleModel
-from src.models.customer import CustomerModel
-from tests.base_test import BaseTest
 
+from src.models.sale import SaleModel
+from tests.base_test import BaseTest
 import json
 
 
@@ -66,49 +64,76 @@ class SaleTest(BaseTest):
                             'status': 'test_status',
                             'cust_id': '1',
                             }
-                r = c.post('/item/test', data=sale_data)
+                r = c.post('/sale', data=sale_data)
 
                 self.assertEqual(r.status_code, 201)
                 self.assertEqual(SaleModel.find_by_date('01-01-2019','1').total_price, 100)
-                self.assertDictEqual(d1={'name': 'test', 'price': 17.99},
+                self.assertDictEqual(d1=sale_data,
                                      d2=json.loads(r.data))
 
     def test_create_duplicate_item(self):
         with self.app() as c:
             with self.app_context():
-                StoreModel('test').save_to_db()
-                c.post('/item/test', data={'price': 17.99, 'store_id': 1})
-                r = c.post('/item/test', data={'price': 17.99, 'store_id': 1})
+                sale = SaleModel('01-01-2019', 100, 'test_payment_type', 'test_status', '1')
+                sale.save_to_db()
+                sale_data = {'date': '01-01-2019',
+                             'total price': 100,
+                             'payment_type': 'test_payment_type',
+                             'status': 'test_status',
+                             'cust_id': '1',
+                             }
+                c.post('/sale', data=sale_data)
+                r = c.post('/sale', data=sale_data)
 
                 self.assertEqual(r.status_code, 400)
 
     def test_put_item(self):
         with self.app() as c:
             with self.app_context():
-                StoreModel('test').save_to_db()
-                r = c.put('/item/test', data={'price': 17.99, 'store_id': 1})
+                sale = SaleModel('01-01-2019', 100, 'test_payment_type', 'test_status', '1')
+                sale.save_to_db()
+                sale_data = {'date': '01-01-2019',
+                             'total price': 100,
+                             'payment_type': 'test_payment_type',
+                             'status': 'test_status',
+                             'cust_id': '1',
+                             }
+                r = c.put('/sale', data=sale_data)
 
                 self.assertEqual(r.status_code, 200)
-                self.assertEqual(ItemModel.find_by_name('test').price, 17.99)
-                self.assertDictEqual(d1={'name': 'test', 'price': 17.99},
+                self.assertEqual(SaleModel.find_by_date('01-01-2019','1').total_price, 100)
+                self.assertDictEqual(d1=sale_data,
                                      d2=json.loads(r.data))
 
     def test_put_update_item(self):
         with self.app() as c:
             with self.app_context():
-                StoreModel('test').save_to_db()
-                c.put('/item/test', data={'price': 17.99, 'store_id': 1})
-                r = c.put('/item/test', data={'price': 18.99, 'store_id': 1})
+                sale = SaleModel('01-01-2019', 100, 'test_payment_type', 'test_status', '1')
+                sale.save_to_db()
+                sale_data = {'date': '01-01-2019',
+                             'total price': 100,
+                             'payment_type': 'test_payment_type',
+                             'status': 'test_status',
+                             'cust_id': '1',
+                             }
+                c.put('/sale', data=sale_data)
+                r = c.put('/sale/1', data=sale_data)
 
                 self.assertEqual(r.status_code, 200)
-                self.assertEqual(ItemModel.find_by_name('test').price, 18.99)
+                self.assertEqual(SaleModel.find_by_date('01-01-2019','1').total_price, 100)
 
     def test_item_list(self):
         with self.app() as c:
             with self.app_context():
-                StoreModel('test').save_to_db()
-                ItemModel('test', 17.99, 1).save_to_db()
-                r = c.get('/items')
+                sale = SaleModel('01-01-2019', 100, 'test_payment_type', 'test_status', '1')
+                sale.save_to_db()
+                r = c.get('/sales')
+                sale_data = {'date': '01-01-2019',
+                             'total price': 100,
+                             'payment_type': 'test_payment_type',
+                             'status': 'test_status',
+                             'cust_id': '1',
+                             }
 
-                self.assertDictEqual(d1={'items': [{'name': 'test', 'price': 17.99}]},
+                self.assertDictEqual(d1={'sales': sale_data},
                                      d2=json.loads(r.data))
