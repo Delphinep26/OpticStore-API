@@ -1,4 +1,4 @@
-from flask_jwt import jwt_required
+from flask_jwt_extended import jwt_required
 from flask_restful import Resource, reqparse
 from src.models.customer import CustomerModel
 
@@ -34,7 +34,7 @@ class Customer(Resource):
                         required=False,
                         help='This field cannot be left blank!')
 
-    @jwt_required()
+    @jwt_required
     def get(self, _id):
         """
         Finds an customer by its full name and returns it.
@@ -133,4 +133,4 @@ class CustomerList(Resource):
         :return: all customers' data.
         :rtype: application/json.
         """
-        return {'customers': [customer.json() for customer in CustomerModel.query.all()]}
+        return {'customers': [customer.json() for customer in CustomerModel.find_all()]}

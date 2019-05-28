@@ -1,10 +1,8 @@
 import os
 from flask import Flask
 from flask_restful import Api
-from flask_jwt import JWT
-
-from security import authenticate, identity
-from src.resources.user import UserRegister
+from flask_jwt_extended import JWTManager
+from src.resources.user import UserRegister, User, UserLogin
 from src.resources.customer import Customer, CustomerList
 from src.resources.sale import Sale, SaleList
 from src.resources.prescription import Prescription, PrescriptionList
@@ -17,8 +15,7 @@ app.config['DEBUG'] = True
 app.secret_key = 'delphine'
 api = Api(app)
 
-
-jwt = JWT(app, authenticate, identity)  # /auth
+jwt = JWTManager(app)
 
 api.add_resource(Customer, '/customer/<int:_id>','/customer')
 api.add_resource(CustomerList, '/customers')
@@ -27,6 +24,8 @@ api.add_resource(SaleList, '/sales')
 api.add_resource(Prescription, '/prescription/<int:_id>')
 api.add_resource(PrescriptionList, '/prescriptions')
 api.add_resource(UserRegister, '/register')
+api.add_resource(User, '/user/<int:user_id>')
+api.add_resource(UserLogin, '/login')
 
 if __name__ == '__main__':
     from db import db

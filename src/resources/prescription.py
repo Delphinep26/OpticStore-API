@@ -1,4 +1,4 @@
-from flask_jwt import jwt_required
+from flask_jwt_extended import jwt_required
 from flask_restful import Resource, reqparse
 from src.models.prescription import PrescriptionModel
 
@@ -10,12 +10,12 @@ class Prescription(Resource):
                         required=False,
                         help='Date in the format yyyymmdd')
 
-    parser.add_argument('cust_id',
+    parser.add_argument('customer_id',
                         type=str,
                         required=True,
-                        help='Every prescriptions needs a cust_id.')
+                        help='Every prescriptions needs a customer_id.')
 
-    @jwt_required()
+    @jwt_required
     def get(self, _id):
         """
         Finds an Prescription by its name and returns it.
@@ -105,4 +105,4 @@ class PrescriptionList(Resource):
         :return: all Prescriptions' data.
         :rtype: application/json.
         """
-        return {'Prescription': [prescription.json() for prescription in PrescriptionModel.query.all()]}
+        return {'Prescription': [prescription.json() for prescription in PrescriptionModel.find_all()]}

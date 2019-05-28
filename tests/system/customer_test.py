@@ -46,7 +46,7 @@ class CustomerTest(BaseTest):
                     'total price': 100,
                     'payment_type': 'test_payment_type',
                     'status': 'test_status',
-                    'cust_id': '1',
+                    'customer_id': '1',
                     }
                 self.assertDictEqual(d1=expected,
                                      d2=json.loads(r.data))

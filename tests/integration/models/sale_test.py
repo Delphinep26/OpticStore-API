@@ -30,4 +30,4 @@ class SaleTest(BaseTest):
             customer.save_to_db()
             sale.save_to_db()
 
-            self.assertEqual(sale.cust_id, customer.id)
+            self.assertEqual(sale.customer_id, customer.id)

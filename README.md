@@ -28,7 +28,7 @@ How to Run the App?
 -   python3 run.py
 
 Everything should be ready. In your browser open
-<http://127.0.0.1:5000/>
+</>
 
 REST Endpoints
 --------------
@@ -44,16 +44,16 @@ The endpoints and the corresponding REST operations are defined as
 follows:
 
 -   **Customer**
-    -   http://127.0.0.1:5000/customers
+    -   /customers
         -   **GET** : This method on above URL returns all the
             customers available in the database in json format
-    -   http://127.0.0.1:5000/customer/{int:_id}
+    -   /customer/{int:_id}
          -   **GET** : This method on above URL returns in json format
          the particular customer available in the database if
          the *customer\_id* exists.
         -   **Delete** : This method deletes the given customer if the
          *customer\_id* exists.
-    -   http://127.0.0.1:5000/customer
+    -   /customer
         -   **POST** : This method posts a new customer and accept
             *application/JSON* format for the operation with first_name
              and last_name as the only and the required parameter for the JSON.
@@ -61,16 +61,16 @@ follows:
             the customer object too.
 
 -   **Sales**
-    -   http://127.0.0.1:5000/sales
+    -   /sales
         -   **GET** : This method on above URL returns all the
             sales available in the database in json format
-    -   http://127.0.0.1:5000/sale/{int:_id}
+    -   /sale/{int:_id}
          -   **GET** : This method on above URL returns in json format
          the particular customer available in the database if
          the *sale\_id* exists.
         -   **Delete** : This method deletes the given sale if the
          *sale\_id* exists.
-    -   http://127.0.0.1:5000/sale
+    -   /sale
         -   **POST** : This method posts a new sale and accept
             *application/JSON* format for the operation with
             the required parameter for the JSON.
@@ -78,16 +78,16 @@ follows:
             the sale object too.
 
 -   **Prescription**
-    -   http://127.0.0.1:5000/prescriptions
+    -   /prescriptions
         -   **GET** : This method on above URL returns all the
             prescriptions available in the database in json format
-    -   http://127.0.0.1:5000/prescription/{int:_id}
+    -   /prescription/{int:_id}
          -   **GET** : This method on above URL returns in json format
          the particular prescription available in the database if
          the *prescription\_id* exists.
         -   **Delete** : This method deletes the given prescription if the
          *prescription\_id* exists.
-    -   http://127.0.0.1:5000/prescription
+    -   /prescription
         -   **POST** : This method posts a new prescription and accept
             *application/JSON* format for the operation with
             the required parameter for the JSON.
@@ -95,9 +95,12 @@ follows:
             the prescription object too.
 
 -   **User**
-    -   http://127.0.0.1:5000/register
+    -   /login
+        -   **POST** : This method login with username and password if the
+            user_name exists and the password is correct.
+    -   /register
         -   **POST** : This method posts a new user and accept
-            *application/JSON* format for the operation with username and pasword .
+            *application/JSON* format for the operation with username and password .
         -   **Delete** : This method deletes the given user if the
             user_name exists.
 

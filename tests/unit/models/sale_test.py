@@ -15,7 +15,7 @@ class SaleTest(BaseTest):
         self.assertEqual(sale.payment_type, 'test_payment_type',
                          "The payment_type of the sale after creation does not equal the constructor argument.")
         self.assertEqual(sale.status,'test_status',  "The status of the sale after creation does not equal the constructor argument.")
-        self.assertEqual(sale.cust_id,'1',"The cust_id of the sale after creation does not equal the constructor argument.")
+        self.assertEqual(sale.customer_id,'1',"The customer_id of the sale after creation does not equal the constructor argument.")
 
     def test_sale_json(self):
         sale = SaleModel('01-01-2019', 100, 'test_payment_type', 'test_status', '1')
@@ -24,7 +24,7 @@ class SaleTest(BaseTest):
                     'total price': 100,
                     'payment_type': 'test_payment_type',
                     'status': 'test_status',
-                    'cust_id': '1',
+                    'customer_id': '1',
                     }
 
         self.assertEqual(

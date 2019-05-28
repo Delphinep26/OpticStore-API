@@ -51,7 +51,7 @@ class CustomerModel(db.Model):
         return (cls.query.filter_by(first_name=first_name, last_name=last_name)).first()
 
     @classmethod
-    def find_by_id(cls, _id):
+    def find_by_id(cls,_id):
         """
         Selects an customer from the DB and returns it.
 
@@ -60,7 +60,11 @@ class CustomerModel(db.Model):
         :return: an customer.
         :rtype: CustomerModel.
         """
-        return (cls.query.filter_by(id=_id)).first()
+        return cls.query.filter_by(id=_id).first()
+
+    @classmethod
+    def find_all(cls):
+        return cls.query.all()
 
     @validates('email')
     def validate_email(self, key, email):

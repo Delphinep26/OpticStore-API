@@ -37,7 +37,7 @@ class SaleTest(BaseTest):
                             'total price': 100,
                             'payment_type': 'test_payment_type',
                             'status': 'test_status',
-                            'cust_id': '1',
+                            'customer_id': '1',
                             }
                 self.assertEqual(r.status_code, 200)
                 self.assertDictEqual(d1=expected,
@@ -62,7 +62,7 @@ class SaleTest(BaseTest):
                             'total price': 100,
                             'payment_type': 'test_payment_type',
                             'status': 'test_status',
-                            'cust_id': '1',
+                            'customer_id': '1',
                             }
                 r = c.post('/sale', data=sale_data)
 
@@ -80,7 +80,7 @@ class SaleTest(BaseTest):
                              'total price': 100,
                              'payment_type': 'test_payment_type',
                              'status': 'test_status',
-                             'cust_id': '1',
+                             'customer_id': '1',
                              }
                 c.post('/sale', data=sale_data)
                 r = c.post('/sale', data=sale_data)
@@ -96,7 +96,7 @@ class SaleTest(BaseTest):
                              'total price': 100,
                              'payment_type': 'test_payment_type',
                              'status': 'test_status',
-                             'cust_id': '1',
+                             'customer_id': '1',
                              }
                 r = c.put('/sale', data=sale_data)
 
@@ -114,7 +114,7 @@ class SaleTest(BaseTest):
                              'total price': 100,
                              'payment_type': 'test_payment_type',
                              'status': 'test_status',
-                             'cust_id': '1',
+                             'customer_id': '1',
                              }
                 c.put('/sale', data=sale_data)
                 r = c.put('/sale/1', data=sale_data)
@@ -132,7 +132,7 @@ class SaleTest(BaseTest):
                              'total price': 100,
                              'payment_type': 'test_payment_type',
                              'status': 'test_status',
-                             'cust_id': '1',
+                             'customer_id': '1',
                              }
 
                 self.assertDictEqual(d1={'sales': sale_data},

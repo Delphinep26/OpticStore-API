@@ -12,15 +12,15 @@ class SaleModel(db.Model):
     total_price = db.Column(db.Float(precision=2))
     payment_type = db.Column(db.String(50))
     status = db.Column(db.String(50))
-    cust_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
+    customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
     customer = db.relationship('CustomerModel')
 
-    def __init__(self, date, total_price, payment_type, status, cust_id):
+    def __init__(self, date, total_price, payment_type, status, customer_id):
         self.date = date
         self.total_price = total_price
         self.payment_type = payment_type
         self.status = status
-        self.cust_id = cust_id
+        self.customer_id = customer_id
 
     def json(self):
         """
@@ -33,7 +33,7 @@ class SaleModel(db.Model):
                 'total price': self.total_price,
                 'payment_type': self.payment_type,
                 'status': self.status,
-                'cust_id': self.cust_id}
+                'customer_id': self.customer_id}
 
     @classmethod
     def find_by_id(cls, _id):
@@ -45,7 +45,11 @@ class SaleModel(db.Model):
         :return: a sale.
         :rtype: saleModel.
         """
-        return (cls.query.filter_by(id=_id)).first()
+        return cls.query.filter_by(id=_id).first()
+
+    @classmethod
+    def find_all(cls):
+        return cls.query().all()
 
     @validates('date')
     def validate_date(self, key, date):

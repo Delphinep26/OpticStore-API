@@ -20,6 +20,12 @@ class UserModel(db.Model):
         self.username = username
         self.password = password
 
+    def json(self):
+        return {
+            'id': self.id,
+            'username': self.username
+        }
+
     @classmethod
     def find_by_username(cls, username):
         """
@@ -30,10 +36,12 @@ class UserModel(db.Model):
         :return: a user.
         :rtype: UserModel.
         """
-        return (cls.query.filter_by(username=username)).first()
+
+        return cls.query.filter_by(username=username).first()
+
 
     @classmethod
-    def find_by_id(cls, _id):
+    def find_by_id(cls,_id):
         """
         Selects a user from the DB and returns it.
 
@@ -42,7 +50,8 @@ class UserModel(db.Model):
         :return: a user.
         :rtype: UserModel.
         """
-        return (cls.query.filter_by(id=_id)).first()
+        print(_id)
+        return cls.query.filter_by(id=_id).first()
 
     @validates('username')
     def validate_username(self, key, username):

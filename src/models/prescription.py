@@ -22,16 +22,16 @@ class PrescriptionModel(db.Model):
     add_OD = db.Column(db.Float(precision=2))
     add_OS = db.Column(db.Float(precision=2))
     pd = db.Column(db.Float(precision=2))
-    type_name = ChoiceType(constants.PRESCRIPTION_TYPE)
+    type_name = constants.PrescriptionType
     nearsightedness = db.Column(db.Float(precision=2))
     farsightedness = db.Column(db.Float(precision=2))
     document_id = db.Column(db.String(20))
-    cust_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
+    customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
     customer = db.relationship('CustomerModel')
 
 
     def __init__(self, date, sphere_OD,sphere_OS,cylinder_OD,cylinder_OS,axis_OD,axis_OS,pd,type_name,
-                 nearsightedness,farsightedness,document_id,cust_id):
+                 nearsightedness,farsightedness,document_id,customer_id):
         self.date = date
         self.sphere_OD = sphere_OD
         self.sphere_OS = sphere_OS
@@ -44,7 +44,7 @@ class PrescriptionModel(db.Model):
         self.nearsightedness = nearsightedness
         self.farsightedness = farsightedness
         self.document_id = document_id
-        self.cust_id = cust_id
+        self.customer_id = customer_id
 
     def json(self):
         """
@@ -59,7 +59,7 @@ class PrescriptionModel(db.Model):
                 'axis_OD': self.axis_OD,'axis_OS': self.axis_OS,
                 'pd': self.pd,'type_name': self.type_name,
                 'nearsightedness': self.nearsightedness,'farsightedness': self.farsightedness,
-                'document_id': self.document_id, 'cust_id': self.cust_id}
+                'document_id': self.document_id, 'customer_id': self.customer_id}
 
 
     @classmethod
@@ -72,7 +72,13 @@ class PrescriptionModel(db.Model):
         :return: a prescription.
         :rtype: prescriptionModel.
         """
-        return (cls.query.filter_by(id=_id)).first()
+        return cls.query.filter_by(id=_id).first()
+
+
+
+    @classmethod
+    def find_all(cls):
+        return cls.query().all()
 
 
     def save_to_db(self):

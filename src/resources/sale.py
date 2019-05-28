@@ -1,4 +1,4 @@
-from flask_jwt import jwt_required
+from flask_jwt_extended import jwt_required
 from flask_restful import Resource, reqparse
 from src.models.sale import SaleModel
 
@@ -21,12 +21,12 @@ class Sale(Resource):
                         type=str,
                         required=True,
                         help='Every sales needs a status.')
-    parser.add_argument('cust_id',
+    parser.add_argument('customer_id',
                         type=str,
                         required=True,
-                        help='Every sales needs a cust_id.')
+                        help='Every sales needs a customer_id.')
 
-    @jwt_required()
+    @jwt_required
     def get(self, _id):
         """
         Finds an sale by its name and returns it.
@@ -98,7 +98,7 @@ class Sale(Resource):
             sale.total_price = request_data['total_price']
             sale.payment_type = request_data['payment_type']
             sale.status = request_data['status']
-            sale.cust_id = request_data['cust_id']
+            sale.customer_id = request_data['customer_id']
             try:
                 sale.save_to_db()
             except:
@@ -119,4 +119,4 @@ class SaleList(Resource):
         :return: all sales' data.
         :rtype: application/json.
         """
-        return {'sale': [sale.json() for sale in SaleModel.query.all()]}
+        return {'sale': [sale.json() for sale in SaleModel.find_all()]}
