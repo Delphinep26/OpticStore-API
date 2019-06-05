@@ -1,4 +1,4 @@
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_claims
 from flask_restful import Resource, reqparse
 from src.models.customer import CustomerModel
 
@@ -78,15 +78,20 @@ class Customer(Resource):
         :return: success or failure message.
         :rtype: application/json response.
         """
+        # claims = get_jwt_claims()
+        #
+        # if not claims['is_admin']:
+        #     return {'message': 'Admin privilege required.'}, 401
         customer = CustomerModel.find_by_id(_id)
         if customer:
             try:
                 customer.delete_from_db()
+                return {'message': 'Customer deleted'}
             except:
                 return (
                     {'message': 'An error occurred deleting the customer.'}, 500)
-            else:
-                return {'message': 'Customer deleted'}
+        else:
+            return {'message': 'Customer Not Found'}
 
     def put(self, _id):
         """

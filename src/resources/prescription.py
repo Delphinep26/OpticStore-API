@@ -9,12 +9,54 @@ class Prescription(Resource):
                         type=str,
                         required=False,
                         help='Date in the format yyyymmdd')
-
+    parser.add_argument('sphere_OD',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a sphere_OD.')
+    parser.add_argument('sphere_OS',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a sphere_OS.')
+    parser.add_argument('cylinder_OD',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a cylinder_OD.')
+    parser.add_argument('cylinder_OS',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a cylinder_OS.')
+    parser.add_argument('axis_OD',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a axis_OD.')
+    parser.add_argument('axis_OS',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a axis_OS.')
+    parser.add_argument('pd',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a pd.')
+    parser.add_argument('type_name',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a type_name.')
+    parser.add_argument('nearsightedness',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a nearsightedness.')
+    parser.add_argument('farsightedness',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a farsightedness.')
+    parser.add_argument('document_id',
+                        type=str,
+                        required=True,
+                        help='Every prescriptions needs a document_id.')
     parser.add_argument('customer_id',
                         type=str,
                         required=True,
                         help='Every prescriptions needs a customer_id.')
-
     @jwt_required
     def get(self, _id):
         """
@@ -40,12 +82,13 @@ class Prescription(Resource):
         :rtype: application/json response.
         """
         request_data = Prescription.parser.parse_args()
+        print(request_data)
         prescription = PrescriptionModel(**request_data)
-        try:
-            prescription.save_to_db()
-        except:
-            return (
-                {'message': 'An error occurred inserting the Prescription order.'}, 500)
+        #try:
+        prescription.save_to_db()
+        #except:
+         #   return (
+          #      {'message': 'An error occurred inserting the Prescription.'}, 500)
         return (
             prescription.json(), 201)
 
@@ -62,11 +105,13 @@ class Prescription(Resource):
         if prescription:
             try:
                 prescription.delete_from_db()
+                return {'message': 'Prescription order deleted'}
             except:
                 return (
                     {'message': 'An error occurred deleting the Prescription order.'}, 500)
-            else:
-                return {'message': 'Prescription order deleted'}
+        else:
+            return {'message': 'Prescription Not Found'}
+
 
     def put(self, _id):
         """

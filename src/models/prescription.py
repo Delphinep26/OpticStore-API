@@ -6,7 +6,8 @@
 # Size of source mod 2**32: 2299 bytes
 from db import db
 from sqlalchemy_utils import ChoiceType
-from src.models import constants
+from src.models.constants import PrescriptionType
+from sqlalchemy import Enum
 
 class PrescriptionModel(db.Model):
     """prescriptionmodel."""
@@ -19,10 +20,9 @@ class PrescriptionModel(db.Model):
     cylinder_OS = db.Column(db.Float(precision=2))
     axis_OD = db.Column(db.Float(precision=2))
     axis_OS = db.Column(db.Float(precision=2))
-    add_OD = db.Column(db.Float(precision=2))
-    add_OS = db.Column(db.Float(precision=2))
     pd = db.Column(db.Float(precision=2))
-    type_name = constants.PrescriptionType
+    #type_name = db.Column(PrescriptionType)
+    type_name = db.Column(db.String(20))
     nearsightedness = db.Column(db.Float(precision=2))
     farsightedness = db.Column(db.Float(precision=2))
     document_id = db.Column(db.String(20))

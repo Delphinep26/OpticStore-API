@@ -6,15 +6,18 @@
 # Size of source mod 2**32: 2299 bytes
 from db import db
 from sqlalchemy.orm import validates
+from security import encrypt_password, check_encrypted_password
 import re
-#from werkzeug.security import generate_password_hash, check_password_hash
+
+#from wtforms import Form, BooleanField, StringField, PasswordField, validators
+#from wtforms.validators import DataRequired, Email, Length
 
 class UserModel(db.Model):
     """User model."""
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20))
-    password = db.Column(db.String(20))
+    password = db.Column(db.String())
 
     def __init__(self, username, password):
         self.username = username
@@ -50,7 +53,7 @@ class UserModel(db.Model):
         :return: a user.
         :rtype: UserModel.
         """
-        print(_id)
+
         return cls.query.filter_by(id=_id).first()
 
     @validates('username')
@@ -71,7 +74,7 @@ class UserModel(db.Model):
             raise AssertionError('Password must contain 1 capital letter and 1 number')
         if len(password) < 8 or len(password) > 20:
             raise AssertionError('Password must be between 8 and 20 characters')
-        return password
+        return encrypt_password(password)
 
     def save_to_db(self):
         """

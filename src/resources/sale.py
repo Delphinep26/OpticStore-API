@@ -1,4 +1,4 @@
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_claims
 from flask_restful import Resource, reqparse
 from src.models.sale import SaleModel
 
@@ -69,15 +69,17 @@ class Sale(Resource):
         :return: success or failure message.
         :rtype: application/json response.
         """
+
         sale = SaleModel.find_by_id(_id)
         if sale:
             try:
                 sale.delete_from_db()
+                return {'message': 'sale  deleted'}
             except:
                 return (
                     {'message': 'An error occurred deleting the sale .'}, 500)
-            else:
-                return {'message': 'sale  deleted'}
+        else:
+            return {'message': 'Sale  Not Found'}
 
     def put(self, _id):
         """

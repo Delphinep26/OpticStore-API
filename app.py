@@ -15,13 +15,27 @@ app.config['DEBUG'] = True
 app.secret_key = 'delphine'
 api = Api(app)
 
+
 jwt = JWTManager(app)
+"""
+`claims` are data we choose to attach to each jwt payload
+and for each jwt protected endpoint, we can retrieve these claims via `get_jwt_claims()`
+one possible use case for claims are access level control, which is shown below.
+"""
+
+
+@jwt.user_claims_loader
+def add_claims_to_jwt(identity):
+    if identity == 1:
+        return {'is_admin': True}
+    return {'is_admin': False}
+
 
 api.add_resource(Customer, '/customer/<int:_id>','/customer')
 api.add_resource(CustomerList, '/customers')
 api.add_resource(Sale, '/sale/<int:_id>','/sale')
 api.add_resource(SaleList, '/sales')
-api.add_resource(Prescription, '/prescription/<int:_id>')
+api.add_resource(Prescription, '/prescription/<int:_id>','/prescription')
 api.add_resource(PrescriptionList, '/prescriptions')
 api.add_resource(UserRegister, '/register')
 api.add_resource(User, '/user/<int:user_id>')

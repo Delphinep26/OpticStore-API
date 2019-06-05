@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse
-from werkzeug.security import safe_str_cmp
 from flask_jwt_extended import create_access_token, create_refresh_token
 from src.models.user import UserModel
+from security import encrypt_password, check_encrypted_password
 
 _user_parser = reqparse.RequestParser()
 _user_parser.add_argument('username',
@@ -23,18 +23,16 @@ class UserRegister(Resource):
         if UserModel.find_by_username(data['username']):
             return {"message": "A user with that username already exists"}, 400
 
-        user = UserModel(**data)
+        user = UserModel(data['username'],data['password'])
         user.save_to_db()
 
         return {"message": "User created successfully."}, 201
-
 
 class User(Resource):
     """
     This resource can be useful when testing our Flask app. We may not want to expose it to public users, but for the
     sake of demonstration in this course, it can be useful when we are manipulating data regarding the users.
     """
-
     @classmethod
     def get(cls, user_id):
         user = UserModel.find_by_id(user_id)
@@ -55,12 +53,9 @@ class UserLogin(Resource):
     def post(self):
 
         data = _user_parser.parse_args()
-        print(data['username'])
         user = UserModel.find_by_username(data['username'])
-        print(user)
         # this is what the `authenticate()` function did in security.py
-        if user and safe_str_cmp(user.password, data['password']):
-            print("kk")
+        if user and check_encrypted_password(data['password'],user.password):
             # identity= is what the identity() function did in security.py—now stored in the JWT
             access_token = create_access_token(identity=user.id, fresh=True)
             refresh_token = create_refresh_token(user.id)
