@@ -2,33 +2,13 @@
 # OpticStore API
 =============
 
-Online OpticStore API system using flask, flask-restful, sqlalchemy,
+Online OpticStore API system using flask, flask-restful, sqlalchemy.
 
 
 The project has been developed using Flask- A python Micro-web framework
-and other additional packages describe below in Tech Stack Section.
+and others.
 
 Github link for the project - <https://github.com/Delphinep26/OpticStore-API>
-
-Installation
-------------
-
--   [python3.x](http://www.python.org)
--   [Virtualenv](https://virtualenv.pypa.io/en/stable/)
-
-How to Run the App?
--------------------
-
--   cd path/to/workspace
--   git clone <https://github.com/Delphinep26/OpticStore-API>
--   cd OpticStore
--   virtualenv -p ‘which python3’ venv
--   source venv/bin/activate
--   pip install -r requirements.txt
--   python3 run.py
-
-Everything should be ready. In your browser open
-</>
 
 REST Endpoints
 --------------
@@ -112,3 +92,24 @@ The Tests for all the modules are located in tests directory and can be fired in
 Individually by running their individual test modules
 All at once by running TestAll module which look for all the available modules in the directory and fires the test cases one by one.
 The Flask's Unittest modules were used for developing the testcases.
+
+Installation
+------------
+
+-   [python3.x](http://www.python.org)
+-   [Virtualenv](https://virtualenv.pypa.io/en/stable/)
+
+How to Run the App?
+-------------------
+
+-   cd path/to/workspace
+-   git clone <https://github.com/Delphinep26/OpticStore-API>
+-   cd OpticStore
+-   virtualenv -p ‘which python3’ venv
+-   source venv/bin/activate
+-   pip install -r requirements.txt
+-   python3 run.py
+
+Everything should be ready. In your browser open
+</>
+
